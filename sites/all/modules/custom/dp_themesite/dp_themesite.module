@@ -1,0 +1,169 @@
+<?php
+
+/**
+ * @file
+ * dp_themesite.block.inc
+ */
+
+/**
+ * hook_block_info().
+ */
+/* ------------------------------------------- BLOCK ----------------------------------------- */
+function dp_themesite_block_info() {
+    $blocks = array();
+    $blocks['dc_header'] = array(
+        'info' => t('DP Site: header')
+    );
+    $blocks['dc_main_menu'] = array(
+        'info' => t('DP Site: Mainmenu')
+    );
+    $blocks['dc_shortcode_menu'] = array(
+        'info' => t('DP Site: Short code menu')
+    );
+    return $blocks;
+}
+
+/**
+ * Implement hook_block_view()
+ */
+function dp_themesite_block_view($delta) {
+    $block = array();
+    switch ($delta) {
+        case 'dc_header':
+            $block['content'] = dc_header_block_content();
+            break;
+        case 'dc_main_menu':
+            $block['content'] = dc_main_menu_block_content();
+            break;
+        case 'dc_shortcode_menu':
+            $block['content'] = dc_shortcode_menu_block_content();
+            break;
+    }
+    return $block;
+}
+
+//Block content
+//
+//dc_header
+function dc_header_block_content() {
+    global $base_url;
+    $content = '';
+
+    if (user_is_logged_in()) {
+        $content .= '<a class="tbutton small" href="' . $base_url . '/user/logout" class="logout"><span>Logout</span></a>';
+    } else {
+        $content .= '<a class="tbutton small" href="' . $base_url . '/user"><span>Sign Up</span></a>';
+    }
+
+    return $content;
+}
+
+//dc_main_menu
+function dc_main_menu_block_content() {
+    global $base_url;
+    $output = '';
+
+    $output .= theme('links__system_main_menu', array(
+        'links' => menu_tree_output(menu_tree_all_data('main-menu')),
+        'attributes' => array(
+            'class' => array(
+                'sf-menu',
+            )),
+    ));
+    return $output;
+}
+
+function dc_shortcode_menu_block_content() {
+    global $base_url;
+    $output = '';
+
+    $shortcode_menu = menu_navigation_links('menu-sidebar');
+    $output .= theme('links__menu_list', array(
+        'links' => $shortcode_menu,
+    ));
+    return $output;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------
+  ----------------------------- Breadcrumb --------------------------------------------------
+ --------------------------------------------------------------------------------------------*/
+function dp_themesite_node_view($node, $view_mode, $langcode) {  
+    $breadcrumb = array();
+    $breadcrumb[0] = '<a class="toptip" original-title="Homepage" href="' . url('<front>', array('absolute' => TRUE)) . '"><i class="icon-home"></i></a>';
+    if (($view_mode == 'full')&&($node->type == 'article')) {
+      $breadcrumb[] = l(t('Blog'), "article");
+    }   
+    if (isset($breadcrumb)) {
+      drupal_set_breadcrumb($breadcrumb);
+    }
+}
+
+
+
+
+/* -------------------------------------------------------------------------------------------
+  ------------------------------- FORM --------------------------------------------------
+  ------------------------------------------------------------------------------------------- */
+
+function dp_themesite_form_alter(&$form, $form_state, $form_id) {
+
+    //dpm($form);
+
+      // webform_client_form
+    if (stristr($form_id, "webform_client_form")) {
+        $form['#attributes']['id'] = 'contactForm';
+
+        
+        
+        $form['submitted']['name']['#id'] = 'senderName';
+        
+        $form['submitted']['email_address']['#attributes'] = array('placeholder' => t('Email Address *'));
+        $form['submitted']['email_address']['#id'] = 'senderEmail';
+
+        unset($form['submitted']['message']['#theme_wrappers']);
+        $form['submitted']['message']['#attributes'] = array('placeholder' => t('Message'));
+        $form['submitted']['message']['#id'] = 'message';
+
+        $form['actions']['#attributes']['class'] = array('contact-form-submit', 'vertical-margin-40');
+        $form['actions']['submit']['#attributes']['class'] = array('theme_btn');
+    }
+
+
+
+    if ($form_id == 'comment_node_forum_form' || $form_id == 'comment_node_article_form'  || $form_id == 'comment_node_product_form') {
+        unset($form['author']['name']['#autocomplete_path']);
+        $form['#id'] = 'commentform';
+    }
+    if ($form_id == 'user_login_block') {
+        $form['#id'] = 'loginform';
+    }
+}
+
+//Form comments template    
+function dp_themesite_theme() {
+    return array(
+        'user_login_block' => array(
+            'template' => 'login-form-block',
+            'render element' => 'form',
+        ),
+        'comment_form' => array(
+            'template' => 'comment-form',
+            'render element' => 'form'
+        ),
+    );
+}
+// list link Bloc Form Login
+function dp_themesite_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  $form['name']['#size'] = 30;
+  $form['pass']['#size'] = 30;  
+    
+  $markup ='';
+  if (variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL)) {
+    $markup = ' ' . l(t('Register'), 'user/register', array('attributes' => array('title' => t('Create a new user account.'), 'class' => 'register-link')));
+  }
+  $markup .= l(t('Lost Password?'), 'user/password', array('attributes' => array('title' => t('Request new password via e-mail.'), 'class' => 'lostpass-link')));
+  $markup = '<div class="login-links">' . $markup . '</div>';
+  $form['links']['#markup'] = $markup;
+}

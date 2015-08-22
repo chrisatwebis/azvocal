@@ -1,0 +1,5 @@
+name = DP Site Custom
+description = Block, Form for site.
+package = Drupal custom
+core = 7.x
+version = 7.x-1.0

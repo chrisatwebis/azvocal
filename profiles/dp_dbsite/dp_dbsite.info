@@ -1,0 +1,11 @@
+name = Theme Drupal
+description = Install profile for Site themes
+version = VERSION
+core = 7.x
+
+files[] = dp_dbsite.profile
+
+version = "7.x-1.0-beta1"
+core = "7.x"
+project = "Drupalsite"
+datestamp = "1365027012"
