@@ -112,7 +112,7 @@ drupal_add_html_head($css_skin, 'skin');
 //custom main menu
 function remix_links__system_main_menu($vars) {
     $class = implode($vars['attributes']['class'], ' ');
-    $html = '<nav><ul class="' . $class . '">';
+    $html = '<ul class="' . $class . '">';
 
 
     foreach ($vars['links'] as $key => $link) {
@@ -130,7 +130,7 @@ function remix_links__system_main_menu($vars) {
             $html .= '<li' . $link_class . '>' . l($link_title, $link['#href'], array('html' => 'true')) . $sub_menu . '</li>';
         }
     }
-    $html .= '</ul></nav>';
+    $html .= '</ul>';
 
     return $html;
 }

@@ -61,7 +61,7 @@ function dc_header_block_content() {
 //dc_main_menu
 function dc_main_menu_block_content() {
     global $base_url;
-    $output = '';
+    $output = '<nav>';
 
     $output .= theme('links__system_main_menu', array(
         'links' => menu_tree_output(menu_tree_all_data('main-menu')),
@@ -70,6 +70,7 @@ function dc_main_menu_block_content() {
                 'sf-menu',
             )),
     ));
+    $output .= '</nav>';
     return $output;
 }
 
