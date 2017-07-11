@@ -1,0 +1,133 @@
+.block-bean {
+  .block-title {
+    display: none;
+  }
+}
+
+/**
+  Featured Block
+**/
+.bean-featured-block {
+  .field-name-featured-banner {
+    position: relative;
+    .bg-image {
+      min-height: $banner_height_medium;
+      @include black-transparent-overlay-4;          
+      @media (max-width: $screen-sm-max) {
+        min-height: $banner_height_small;
+      }    
+    }
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      .banner-title {
+        @extend h1;
+        color: $white;
+        @include header-style;
+      }
+      @media (max-width: $screen-sm-max) {
+        transform: translate(-50%, -50%);        
+      }
+    }
+  }
+}
+
+/**
+  Subheader Block
+**/
+.field-name-subheader-banner {
+  position: relative;
+  background: url($image-directory + 'block-header.jpg') $secondary_color_light no-repeat right;  
+  min-height: $banner_height_xxsmall;
+  .banner-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(60px, -50%);
+    .banner-content {
+      color: $primary_color;
+      font-size: $h1_font_size;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      @include title-style-primary;
+    }  
+  }
+  @media (max-width: $screen-md-max) {
+    background: $secondary_color_light;    
+    .banner-container {
+      .banner-content {
+        font-size: $h1_font_size_tablet;
+      }
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .banner-container {
+      transform: translate(15px, -50%); 
+      right: 30px; 
+      .banner-content {
+        font-size: $h1_font_size_mobile;
+      }   
+    }
+  }
+}
+
+/**
+  Image Block
+**/
+.bean-image-block {
+  @extend .row;
+  color: $white;
+  min-height: $banner_height_xlarge; 
+  padding: 45px; 
+  .field-name-image-block-title {
+    .img-block-title {
+      @extend h1;
+      @include title-style-white;
+    }
+  }
+  .field-collection-container {
+    .field-name-field-info-tile {
+      > .field-items {
+        @extend .row;
+        > .field-item {
+          @extend .col-sm-3;
+          @extend .col-xs-6;
+        }
+      }
+    }
+  }
+  .field-name-field-cta {
+    @include cta;    
+  }
+  &.view-mode-right {
+    > .field {
+      @extend .col-lg-6;
+      @extend .col-lg-offset-6;
+      clear: both;
+    }
+    .field-collection-container {
+      @extend .col-lg-6;
+      @extend .col-lg-offset-6;
+      clear: both;
+    }
+  }
+  &.view-mode-left {
+    > .field {
+      @extend .col-lg-6;
+      clear: both;
+    }
+    .field-collection-container {
+      @extend .col-lg-6;
+      clear: both;
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    min-height: $banner_height_large; 
+  }
+  @media (max-width: $screen-xs-max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

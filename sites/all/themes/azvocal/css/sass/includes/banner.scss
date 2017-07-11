@@ -1,0 +1,69 @@
+.banner {
+  min-height: $banner_height_xxlarge;
+  @include black-transparent-overlay-4;
+  .banner-container {
+    position: absolute;
+    z-index: 2;
+    top: 250px;
+    left: 5%;
+    right: 5%;
+    bottom: 60px;
+    .banner-content {
+      color: $white;
+      text-align: center;
+      .banner-icon {
+        img {
+          margin: auto;
+          max-width: 100px;
+          max-height: 200px;
+        }
+      }
+      .banner-title {
+        font-size: $h0_font_size;
+        line-height: $h0_line_height;
+      }
+      .banner-tagline {
+        @extend h2;
+      }
+      .banner-cta {
+        @include cta;
+      }
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    min-height: $banner_height_large;
+    .banner-container {
+      top: 150px;
+      .banner-content {
+        .banner-icon {
+          img {
+            max-width: 60px;
+            max-height: 120px;
+          }
+        }
+        .banner-title {
+          font-size: $h0_font_size_tablet;
+          line-height: $h0_line_height_tablet;
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    min-height: $banner_height_medium;    
+    .banner-container {
+      top: 40px;
+      .banner-content {
+        .banner-icon {
+          img {
+            max-width: 60px;
+            max-height: 120px;
+          }
+        }
+        .banner-title {
+          font-size: $h0_font_size_mobile;
+          line-height: $h0_line_height_mobile;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+// Featured region
+.region-featured  {
+  max-height: $banner_height_xxlarge;    
+}
+
+// Above content region
+.above-content-region-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  overflow: hidden;
+}
+
+// Footer region
+.footer {
+  background: $secondary_color_dark;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media (max-width: $screen-xs-max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Blog all articles landing page
+.page-blog {
+  background: $black;
+}
+
+// Blog articles landing page by categories
+.page-taxonomy-term {
+  &.vocabulary-blog {
+    #block-system-main {
+      @extend .row;
+      padding: 45px;
+      background: $black;
+      .node-article {
+        @extend .col-lg-4;
+        @extend .col-sm-6;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+//Contact page
+.page-node-5 {
+  .node-page {
+    .field-name-body {
+      height: 500px;              
+    }
+  }
+}
+
+// Video categories landing page
+.page-videos {
+  background: $black;
+}
+
+// Video landing page by categories
+.page-taxonomy-term {
+  &.vocabulary-video {
+    #block-system-main {
+      @extend .row;
+      padding: 45px;            
+      background: $black;
+      .node-video {
+        @extend .col-lg-4;
+        @extend .col-sm-6;        
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-left: 0;
+        padding-right: 0;
+      }      
+    }
+  }
+}
+
+// Event landing page
+.page-node-50 {
+  .bean-subheader-block {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.page-node-82 {
+  @extend .page-node-50;
+}
+
+// Social media share
+.addtoany_list {
+  &.a2a_kit_size_32 {
+    a {
+      > span {
+        border-radius: 50%;
+      }
+    }
+  }
+  &::before {
+    content: attr(data-markup-msg);
+  }
+}
+
+// Combo block courses - without highlight style
+#block-bean-courses {
+  .highlight-desc {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.page-node-79 {
+  #block-bean---2 {
+    @extend #block-bean-courses;
+  }
+}

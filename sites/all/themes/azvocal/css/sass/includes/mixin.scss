@@ -1,0 +1,100 @@
+@mixin cta {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  a {
+    @extend .btn;
+    color: $white;
+    background: $primary_color;
+    font-size: $h3_font_size;
+    border-radius: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    &:hover,
+    &:focus {
+      color: $primary_color;
+      background: $white;
+      border: 1px solid $secondary_color_light;
+    }
+    @media (max-width: $screen-md-max) {
+      font-size: $h3_font_size_tablet;
+    }
+    @media (max-width: $screen-xs-max) {
+      font-size: $body_font_size_tablet;
+      display: block;
+    }
+  }
+}
+
+@mixin black-transparent-overlay-6 {
+  position: relative;
+  background: no-repeat;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background: rgba($black, 0.6);
+  }
+}
+
+@mixin black-transparent-overlay-4 {
+  @include black-transparent-overlay-6;
+  &::after {
+    background: rgba($black, 0.4);
+    
+  }
+}
+
+@mixin title-style-primary {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: url($image-directory + '}-primary.png');
+    position: absolute;
+		top: 0;
+		right: 0;
+    transform: translate(150%, 0);
+  }
+  @media (max-width: $screen-md-max) {
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;        
+    }
+  }
+}
+
+@mixin title-style-white {
+  color: $white;
+  @include title-style-primary;
+  &::after {
+    content: url($image-directory + '}-white.png');
+  }
+}
+
+@mixin highlight-style {
+  @include title-style-primary;
+  &::after {
+    content: url($image-directory + 'highlight.png');
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 150%);
+  }
+}
+
+@mixin header-style {
+  @include title-style-primary;
+  &::before {
+    content: url($image-directory + '{.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-150%, 0);
+  }
+  &::after {
+    content: url($image-directory + '}-white.png');
+  }
+}

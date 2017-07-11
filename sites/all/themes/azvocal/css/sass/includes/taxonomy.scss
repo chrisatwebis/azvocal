@@ -1,0 +1,40 @@
+/**
+  Videos
+**/
+.vocabulary-video {
+  .field-name-video-category {
+    position: relative;
+    .bg-image {
+      min-height: $banner_height_small;
+      @include black-transparent-overlay-6;
+      background: no-repeat center;                
+    }
+    .banner-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      .banner-title {
+        a {
+          color: $white;
+          font-size: $h2_font_size;
+          text-transform: uppercase;
+        } 
+      }
+    }
+    @media (max-width: $screen-md-max) {
+      .bg-image {
+        min-height: $banner_height_xsmall;
+      }
+      .banner-container {
+        .banner-title {
+          a {
+            font-size: $h2_font_size_tablet;
+          }
+        }
+      }
+    }
+  }
+}

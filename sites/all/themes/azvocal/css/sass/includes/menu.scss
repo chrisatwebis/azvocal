@@ -1,0 +1,153 @@
+.block-menu-block {
+	.block-title {
+		display: none;
+	}
+}
+
+.block-menu {
+	.block-title {
+		display: none;
+	}
+}
+
+/**
+	First Level Main Menu
+**/
+.region-navigation {
+	ul.menu {
+		> li {
+			float: left;
+			> a {
+				color: $white;
+				padding: 5px;
+				margin: 10px 15px;
+				border-bottom: 4px solid transparent;				
+				.caret {
+					display: none;
+				}
+				&.active-trail,
+				&.active,
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					color: $white;
+					border-bottom: 4px solid $white;					
+				}
+			}
+		}	
+		> li.last {
+			> a {
+				margin: 0;
+				padding: 5px 20px;
+				background: $primary_color;
+				&::before {
+					content: url($image-directory + 'live.png');
+				}
+				&.active-trail,
+				&.active,
+				&:focus,
+				&:hover {
+					background-color: $primary_color;
+					border-bottom: 4px solid transparent;					
+				}
+			}
+		}
+	}
+}
+
+/**
+* Second Level Main Menu
+**/
+.region-featured {
+	position: relative;
+	.block-menu-block {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
+		background: linear-gradient(rgba($black,0.3),rgba($black,0.3));
+		text-align: center;
+		ul.menu {
+			> li {
+				display: inline-block;
+				> a {
+					color: $white;
+					padding: 5px 0;
+					margin: 5px 15px;
+					border-bottom: 4px solid transparent;
+					&.active-trail,
+					&.active,
+					&:focus,
+					&:hover {
+						background-color: transparent;
+						color: $white;
+						border-bottom: 4px solid $white;					
+					}
+				}
+			}
+		}
+		@media (max-width: $screen-sm-max) {
+			display: none;
+		}
+	}
+}
+
+
+/**
+	User Menu
+**/
+.region-header {
+	ul.menu {
+		float: right;
+		> li {
+			float: left;
+			> a {
+				color: $white;
+				padding: 5px;
+				margin: 10px 15px;
+				border-bottom: 4px solid transparent;	
+				.caret {
+					display: none;
+				}
+				&.active-trail,
+				&.active,
+				&:focus,
+				&:hover {
+					background-color: transparent;
+					color: $white;
+					border-bottom: 4px solid $white;					
+				}
+			}
+			>ul.dropdown-menu {
+				display: none;
+			}
+		}
+	}
+}
+
+/**
+	Footer Menu
+**/
+.region-footer {
+	.block-menu-block {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		@extend .col-lg-5;
+		ul.menu {
+			@extend .row;
+			> li {
+				@extend .col-sm-4;
+				@extend .col-xs-6;
+				> a {
+					color: $white;
+					&:focus,
+					&:hover {
+						background-color: transparent;
+						text-decoration: underline;				
+					}
+				}
+			}
+		}
+	}
+}

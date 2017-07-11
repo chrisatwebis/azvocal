@@ -1,0 +1,192 @@
+/**
+  FAQS header block
+**/
+#block-block-5 {
+  position: relative;
+  background: url($image-directory + 'block-header.jpg') $secondary_color_light no-repeat right;  
+  min-height: $banner_height_xxsmall;
+  .block-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(60px, -50%);
+    @media (max-width: $screen-xs-max) {
+      transform: translate(15px, -50%);  
+      right: 15px;    
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    background: $secondary_color_light;
+  }
+}
+
+#block-block-12 {
+  @extend #block-block-5;
+}
+
+/**
+  Contact
+**/
+#block-block-4 {
+  background: $secondary_color_dark;
+  .block-container {
+    .block-content {
+      padding-top: 55px;
+      padding-bottom: 75px;
+      padding-left: 45px;
+      padding-right: 45px;
+      color: $white;
+      .register {
+        @include cta;
+      }
+      @media (max-width: $screen-xs-max) {
+        padding-left: 0;
+        padding-right: 0;
+      }    
+    }
+  }
+  .block-img {
+    img {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      display: block;
+      margin: auto;
+      max-width: 680px;
+    }
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+}
+
+#block-block-11 {
+  @extend #block-block-4;
+}
+
+/**
+  Students - Image Banner
+**/
+#block-block-6 {
+  margin-left: -15px;
+  margin-right: -15px;
+  img {
+    width: 100%;
+  }
+}
+
+/**
+  Register for Courses
+**/
+.region-above-footer {
+  .block {
+    position: relative;
+    background: linear-gradient(rgba($black,0.3),rgba($black,0.3)), url($image-directory + 'block1.jpg');
+    min-height: $banner_height_xsmall;
+    .block-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      .heading {
+        margin: 30px 0;
+        color: $white;
+      }
+      .cta {
+        @include cta;
+      }
+    } 
+  }
+}
+
+/**
+  Footer Contact
+**/
+#block-block-7 {
+  @extend .col-lg-4;
+  @extend .col-lg-push-1;
+  @extend .col-md-6;
+  @extend .col-sm-8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: $white;
+  .footer-logo {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .footer-contact-content {
+    .company-name {
+      @extend h3;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .phone {
+      @extend h3;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/**
+  Footer Social Media
+**/
+#block-block-8 {
+  @extend .col-lg-2;
+  @extend .col-lg-push-1;
+  @extend .col-md-push-2;  
+  @extend .col-sm-4;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: $white;
+  h3 {
+    margin-top: 0;
+  }
+  img {
+    margin: 15px;
+  }
+}
+
+#block-block-13 {
+  @extend #block-block-8;
+}
+
+/**
+  Copyright
+**/
+#block-block-9 {
+  @extend .col-sm-12;
+  color: $white;
+  font-size: $small_print_font_size;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/***
+ *	Language switcher Block
+ **/
+#block-lang-dropdown-language {
+  $block-height: 66px;
+  $content-height: 30px;
+  padding: ($block-height - $content-height)/2 5px;
+	.language-icon {
+		display: block;
+		margin: 5px 10px;
+		float: left;
+		width: 20px;
+		height: 20px;
+		@extend .img-circle;
+	}
+	.form-item-lang-dropdown-select  {
+		display: block;
+		float: left;
+		margin-bottom: 0px;
+		select {
+			height: 30px;
+			padding-top: 4px;
+			padding-bottom: 4px;
+		}
+	}
+}

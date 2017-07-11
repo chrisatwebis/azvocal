@@ -1,0 +1,180 @@
+/**
+  Webform block - faq
+**/
+.block-webform {
+  background: $secondary_color_dark;
+  color: $white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  .block-title {
+    padding-left: 60px;
+    @extend h1;
+    @include title-style-white;
+  }
+  .webform-client-form {
+    @extend .row;
+    .form-item {
+      @extend .col-lg-7;
+      padding-left: 75px;
+      padding-right: 75px;
+    }
+    .form-actions {
+      @extend .col-lg-7;   
+      margin-top: 15px;
+      margin-bottom: 15px;
+      padding-left: 75px;
+      padding-right: 75px;
+      button {
+        color: $white;
+        background: $primary_color;
+        font-size: $h3_font_size;
+        border: 1px solid $primary_color;
+        border-radius: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+        &:hover,
+        &:focus {
+          color: $primary_color;
+          background: $white;
+          border: 1px solid $secondary_color_light;
+        }
+        @media (max-width: $screen-md-max) {
+          font-size: $h3_font_size_tablet;
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .block-title {
+      padding-left: 15px; 
+    }
+    .webform-client-form {
+      .form-item {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .form-actions {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  }  
+}
+
+/**
+  Webform page - register
+**/
+.node-webform {
+  @extend .row;
+  padding: 30px;
+  background: $black;
+  color: $white;
+  .group-left {
+    @extend .col-lg-6;
+    @extend .col-xs-12;
+    .webform-client-form {
+      @extend .row;
+      padding: 15px;    
+      .webform-component--membership-type {
+        @extend .col-sm-7;
+        .form-radios {
+          @extend .row;
+          .form-item {
+            @extend .col-sm-6;
+            margin: 10px 0;
+          }
+        }
+      }
+      .webform-component--type-of-course {
+        @extend .col-sm-7;
+      }
+      .webform-component--name {
+        @extend .col-sm-7;
+      }
+      .webform-component--chinese {
+        @extend .col-sm-5;
+      }
+      .webform-component--birth-month {
+        @extend .col-sm-4;
+      }
+      .webform-component--address {
+        clear: both;      
+        @extend .col-sm-12;
+      }
+      .webform-component--mobile {
+        clear: both;
+        @extend .col-sm-6;
+      }
+      .webform-component--phone {
+        @extend .col-sm-6;
+      }
+      .webform-component--email {
+        @extend .col-sm-6;
+      }
+      .webform-component--emergency-contact-name {
+        clear: both;        
+        @extend .col-sm-6;
+      }
+      .webform-component--emergency-phone-email {
+        @extend .col-sm-6;
+      }
+      .webform-component--terms-and-conditions {
+        @extend .col-sm-12;
+      }
+      .webform-component-markup {
+        @extend .col-sm-12;
+        margin-left: 15px;
+      }
+      .form-actions {
+        @extend .col-sm-4;   
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        button {
+          color: $white;
+          background: $primary_color;
+          font-size: $h3_font_size;
+          border: 1px solid $primary_color;
+          border-radius: 0;
+          padding-left: 30px;
+          padding-right: 30px;
+          &:hover,
+          &:focus {
+            color: $primary_color;
+            background: $white;
+            border: 1px solid $secondary_color_light;
+          }
+          @media (max-width: $screen-md-max) {
+            font-size: $h3_font_size_tablet;
+          }
+        }
+      }
+    }
+  }
+  .group-right {
+    @extend .col-lg-6;
+    @extend .col-xs-12;
+    padding: 30px;
+    .field-name-field-body {
+      img {
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+    }
+    @media (max-width: $screen-md-max) {
+      display: none;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    padding-left: 0;
+    padding-right: 0;
+    .group-left {
+      .webform-client-form {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

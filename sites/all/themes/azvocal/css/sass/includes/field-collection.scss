@@ -1,0 +1,231 @@
+.field-collection-container {
+  margin: 0;
+  border: none;
+  .field-items {
+    .field-item {
+      margin: 0;
+    }
+  }
+}
+
+.field-collection-view {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Combo Block Intro
+**/
+.field-collection-item-field-intro {
+  .field-name-intro-banner {
+    position: relative;
+    overflow: hidden;
+    .bg-image {
+      @extend .col-lg-7;
+      @include black-transparent-overlay-6;
+      min-height: $banner_height_large;
+      background-size: cover;
+    }
+    .intro-container {
+      @extend .col-lg-8;
+      position: absolute;
+      top: 0;
+      right: -140px;
+      min-height: $banner_height_large;
+      background: $secondary_color_light;
+      transform: skew(25deg);
+      .intro-content {
+        @extend .row;
+        height: 100%;
+        transform: skew(-25deg);
+        .content-container {
+          @extend .col-lg-8;
+          @extend .col-lg-offset-2;
+          .intro-title {
+            @extend h1;
+            color: $primary_color;
+            @include title-style-primary;            
+          }
+          .intro-desc {
+            margin-bottom: 60px;
+          }
+          .intro-cta {
+            @include cta;            
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    .field-name-intro-banner {
+      .bg-image {
+        &::after {
+          position: static;
+        }
+      }
+      .intro-container {
+        position: static;
+        right: initial;
+        min-height: initial;
+        transform: skew(0);
+        padding-top: 30px;
+        padding-bottom: 45px;
+        padding-left: 60px;
+        padding-right: 60px;
+        .intro-content {
+          transform: skew(0);
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .field-name-intro-banner {
+      .bg-image {
+        min-height: $banner_height_small;        
+      }
+      .intro-container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+/**
+  Combo Block Highlight
+**/
+.field-collection-item-field-highlight {
+  .field-name-highlight-banner {
+    position: relative;
+    overflow: hidden;
+    .highlight-container {
+      @extend .col-lg-10;
+      position: absolute;
+      top: 0;
+      left: -70px;
+      min-height: $banner_height_small;
+      background: $primary_color;
+      transform: skew(25deg);
+      z-index: 1;
+      .highlight-content {
+        @extend .row;
+        transform: skew(-25deg);
+        .content-container {
+          @extend .col-lg-8;
+          @extend .col-lg-offset-2;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          text-align: center;          
+          .highlight-desc {
+            color: $white;
+            @include highlight-style;
+            .cta {
+              @include cta;
+            }
+          }
+        }
+      }
+    }
+    .bg-image {
+      @extend .col-lg-4;
+      @extend .col-lg-offset-8;
+      @include black-transparent-overlay-6;
+      background-size: cover;
+      min-height: $banner_height_small;
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    .field-name-highlight-banner {
+      .bg-image {
+        display: none;
+      }
+      .highlight-container {
+        position: static;
+        left: initial;
+        min-height: initial;
+        transform: skew(0);
+        padding-left: 60px;
+        padding-right: 60px;
+        .highlight-content {
+          transform: skew(0);
+        }
+      }
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .field-name-highlight-banner {
+      .highlight-container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}
+
+/**
+  Combo Block Details
+**/
+.field-collection-item-field-details {
+  background: $black;
+  color: $white;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  padding-left: 60px;
+  padding-right: 60px;
+  .field-name-field-details-icon {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    img {
+      margin: auto;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }  
+}
+
+
+/**
+  Image Block Info Tile
+**/
+.field-collection-item-field-info-tile {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  .field-name-info-tile-group {
+    .group-container {
+      .group-content {
+        .group-icon {
+          position: relative;
+          margin: auto;
+          border-radius: 50%;
+          background: $secondary_color_dark;
+          height: 100px;
+          width: 100px;
+          img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .group-title {
+          @extend h4;
+          color: $white;
+          text-align: center;
+        }
+        @media (max-width: $screen-xs-max) {
+          .group-icon {
+            height: 50px;
+            width: 50px;
+            img {
+              height: 35px;
+              width: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
