@@ -1,1 +1,0 @@
-<img src="<?php print  file_create_url($content['field_background']['#items'][0]['uri']); ?>" alt="#">
