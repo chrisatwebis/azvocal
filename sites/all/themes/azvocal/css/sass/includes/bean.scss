@@ -12,7 +12,9 @@
     position: relative;
     .bg-image {
       min-height: $banner_height_medium;
-      @include black-transparent-overlay-4;          
+      @include black-transparent-overlay-4;  
+      background-position: center;
+      background-size: cover;           
       @media (max-width: $screen-sm-max) {
         min-height: $banner_height_small;
       }    

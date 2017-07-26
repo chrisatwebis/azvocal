@@ -1,6 +1,8 @@
 .banner {
   min-height: $banner_height_xxlarge;
   @include black-transparent-overlay-4;
+  background-position: center;
+  background-size: cover;
   .banner-container {
     position: absolute;
     z-index: 2;

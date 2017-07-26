@@ -6247,28 +6247,30 @@ a {
 /**
 	First Level Main Menu
 **/
-.region-navigation ul.menu > li {
-  float: left; }
-  .region-navigation ul.menu > li > a {
-    color: #fff;
-    padding: 5px;
-    margin: 10px 15px;
-    border-bottom: 4px solid transparent; }
-    .region-navigation ul.menu > li > a .caret {
-      display: none; }
-    .region-navigation ul.menu > li > a.active-trail, .region-navigation ul.menu > li > a.active, .region-navigation ul.menu > li > a:focus, .region-navigation ul.menu > li > a:hover {
-      background-color: transparent;
+.region-navigation {
+  float: right; }
+  .region-navigation ul.menu > li {
+    float: left; }
+    .region-navigation ul.menu > li > a {
       color: #fff;
-      border-bottom: 4px solid #fff; }
-.region-navigation ul.menu > li.last > a {
-  margin: 0;
-  padding: 5px 20px;
-  background: #6e278d; }
-  .region-navigation ul.menu > li.last > a::before {
-    content: url("img/live.png"); }
-  .region-navigation ul.menu > li.last > a.active-trail, .region-navigation ul.menu > li.last > a.active, .region-navigation ul.menu > li.last > a:focus, .region-navigation ul.menu > li.last > a:hover {
-    background-color: #6e278d;
-    border-bottom: 4px solid transparent; }
+      padding: 5px;
+      margin: 10px 15px;
+      border-bottom: 4px solid transparent; }
+      .region-navigation ul.menu > li > a .caret {
+        display: none; }
+      .region-navigation ul.menu > li > a.active-trail, .region-navigation ul.menu > li > a.active, .region-navigation ul.menu > li > a:focus, .region-navigation ul.menu > li > a:hover {
+        background-color: transparent;
+        color: #fff;
+        border-bottom: 4px solid #fff; }
+  .region-navigation ul.menu > li.last > a {
+    margin: 0;
+    padding: 5px 20px;
+    background: #6e278d; }
+    .region-navigation ul.menu > li.last > a::before {
+      content: url("img/live.png"); }
+    .region-navigation ul.menu > li.last > a.active-trail, .region-navigation ul.menu > li.last > a.active, .region-navigation ul.menu > li.last > a:focus, .region-navigation ul.menu > li.last > a:hover {
+      background-color: #6e278d;
+      border-bottom: 4px solid transparent; }
 
 /**
 * Second Level Main Menu
@@ -7199,7 +7201,9 @@ a {
   .bean-featured-block .field-name-featured-banner .bg-image {
     min-height: 500px;
     position: relative;
-    background: no-repeat; }
+    background: no-repeat;
+    background-position: center;
+    background-size: cover; }
     .bean-featured-block .field-name-featured-banner .bg-image::after {
       position: absolute;
       top: 0;
@@ -7448,7 +7452,9 @@ a {
 .banner {
   min-height: 800px;
   position: relative;
-  background: no-repeat; }
+  background: no-repeat;
+  background-position: center;
+  background-size: cover; }
   .banner::after {
     position: absolute;
     top: 0;
