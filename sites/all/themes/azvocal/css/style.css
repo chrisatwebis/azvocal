@@ -6254,7 +6254,7 @@ a {
     .region-navigation ul.menu > li > a {
       color: #fff;
       padding: 5px;
-      margin: 10px 15px;
+      margin: 10px;
       border-bottom: 4px solid transparent; }
       .region-navigation ul.menu > li > a .caret {
         display: none; }
@@ -6262,15 +6262,6 @@ a {
         background-color: transparent;
         color: #fff;
         border-bottom: 4px solid #fff; }
-  .region-navigation ul.menu > li.last > a {
-    margin: 0;
-    padding: 5px 20px;
-    background: #6e278d; }
-    .region-navigation ul.menu > li.last > a::before {
-      content: url("img/live.png"); }
-    .region-navigation ul.menu > li.last > a.active-trail, .region-navigation ul.menu > li.last > a.active, .region-navigation ul.menu > li.last > a:focus, .region-navigation ul.menu > li.last > a:hover {
-      background-color: #6e278d;
-      border-bottom: 4px solid transparent; }
 
 /**
 * Second Level Main Menu
@@ -6310,7 +6301,7 @@ a {
     .region-header ul.menu > li > a {
       color: #fff;
       padding: 5px;
-      margin: 10px 15px;
+      margin: 10px;
       border-bottom: 4px solid transparent; }
       .region-header ul.menu > li > a .caret {
         display: none; }
