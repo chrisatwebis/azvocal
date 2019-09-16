@@ -116,6 +116,12 @@
     padding-bottom: 45px;
     padding-left: 60px;
     padding-right: 60px;
+    .field-name-body {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
     .field-name-title {
       color: $primary_color;
     }
